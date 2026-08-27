@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gadget Zone</title>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    const CONFIG = {
+      pageName: "Gadget Zone",
+      scriptURL: "https://script.google.com/macros/s/AKfycbxnAd5FA4XR-WMaP8BSJPlxfprrO5NHQOqr18pL3PH4MTbKMH9dXBTPMXwef7zTf98MbQ/exec", 
+      adminMobile: "01891466471",
+      facebookPixelId: "1666335995060788",
+
+      product: {
+        title: "Dancing Cactus Toy",
+        description: `কথা রিপিট করে আপনার বা বাচ্চার কথা সুন্দর ভঙ্গিতে নকল করে বলে।
+
+🎶 গান গায় (Sing): একাধিক বিল্ট-ইন জনপ্রিয় গান প্লে করতে পারে।
+
+🎙️ রেকর্ড সুবিধা (Record): নিজের কণ্ঠ বা শব্দ রেকর্ড করে রাখার অপশন রয়েছে।
+
+💃 ড্যান্স ও লাইটিং (Dance & Glow): মিউজিকের তালে তালে নাচে এবং সুন্দর LED লাইট জ্বলে।
+
+🔋 চার্জিং ব্যবস্থা: USB চার্জিং ক্যাবল সহ (ব্যাটারি বারবার কেনার ঝামেলা নেই)।
+
+👶 উপকারিতা: শিশুদের মোটর স্কিল ডেভেলপমেন্ট, সেন্সরি এক্সপ্লোরেশন এবং মেধা বিকাশে সাহায্য করে।`,
+        price: 550,
+        image: "https://share.google/wterLDZqx7xeyeZqU",
+        currency: "৳"
+      },
+
+      delivery: {
+        insideSylhet: 80,
+        outsideSylhet: 120
+      }
+    };
+  </script>
+
+  <script>
+    if (CONFIG.facebookPixelId) {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', CONFIG.facebookPixelId);
+      fbq('track', 'PageView');
+    }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a73e8, #0d47a1);
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      background: #eee;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .product-price {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #e53935;
+      margin-bottom: 12px;
+    }
+
+    .product-desc {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 18px;
+      white-space: pre-line;
+    }
+
+    .order-count {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    .btn-buy {
+      width: 100%;
+      background: linear-gradient(135deg, #43a047, #2e7d32);
+      color: white;
+      border: none;
+      padding: 16px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(67, 160, 71, 0.3);
+    }
+
+    .btn-buy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(67, 160, 71, 0.4);
+    }
+
+    .order-form {
+      background: white;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      display: none;
+      margin-bottom: 30px;
+    }
+
+    .order-form.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-align: center;
+      color: #1a73e8;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #1a73e8;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .delivery-options {
+      display: flex;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .delivery-option {
+      flex: 1;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .delivery-option.selected {
+      border-color: #1a73e8;
+      background: #e3f2fd;
+    }
+
+    .delivery-option input {
+      display: none;
+    }
+
+    .delivery-price {
+      font-weight: 700;
+      color: #e53935;
+      margin-top: 4px;
+    }
+
+    .total-box {
+      background: #fff8e1;
+      border: 2px dashed #ffb300;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 18px 0;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .total-box strong {
+      color: #e53935;
+      font-size: 1.3rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #1a73e8, #0d47a1);
+      color: white;
+      border: none;
+      padding: 16px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn-submit:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a73e8;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .success-msg {
+      display: none;
+      background: #e8f5e9;
+      border: 2px solid #4caf50;
+      color: #2e7d32;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 id="pageTitle">Gadget Zone</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="success-msg" id="successMsg">
+      ✅ আপনার অর্ডার সফলভাবে জমা হয়েছে!<br>
+      অর্ডার নিশ্চিত করতে আমাদের প্রতিনিধি অতি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।
+    </div>
+
+    <div class="product-card">
+      <img src="" alt="প্রোডাক্ট" class="product-image" id="productImage">
+      <div class="product-info">
+        <h2 class="product-title" id="productTitle">প্রোডাক্টের নাম</h2>
+        <div class="product-price" id="productPrice">৳ 0</div>
+        <p class="product-desc" id="productDesc">বিবরণ...</p>
+        
+        <div class="order-count" id="orderCount">
+          🔥 ইতিমধ্যে <span id="countNumber">0</span> জন অর্ডার করেছেন
+        </div>
+
+        <button class="btn-buy" onclick="showOrderForm()">🛒 এখনই অর্ডার করুন</button>
+      </div>
+    </div>
+
+    <div class="order-form" id="orderForm">
+      <h3 class="form-title">📦 অর্ডার ফর্ম</h3>
+
+      <div class="form-group">
+        <label>আপনার নাম *</label>
+        <input type="text" id="customerName" placeholder="পুরো নাম লিখুন" required>
+      </div>
+
+      <div class="form-group">
+        <label>মোবাইল নাম্বার *</label>
+        <input type="tel" id="customerMobile" placeholder="01XXXXXXXXX" required>
+      </div>
+
+      <div class="form-group">
+        <label>পূর্ণ ঠিকানা *</label>
+        <textarea id="customerAddress" placeholder="বাসা/রোড, এলাকা, থানা, জেলা" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>ডেলিভারি লোকেশন *</label>
+        <div class="delivery-options">
+          <label class="delivery-option selected">
+            <input type="radio" name="delivery" value="inside" checked onchange="updateTotal()">
+            <div>সিলেটের ভিতরে</div>
+            <div class="delivery-price" id="priceInside">৮০৳</div>
+          </label>
+          <label class="delivery-option">
+            <input type="radio" name="delivery" value="outside" onchange="updateTotal()">
+            <div>সিলেটের বাইরে</div>
+            <div class="delivery-price" id="priceOutside">১২০৳</div>
+          </label>
+        </div>
+      </div>
+
+      <div class="total-box">
+        মোট টাকা: <strong id="totalAmount">০৳</strong>
+      </div>
+
+      <button class="btn-submit" id="submitBtn" onclick="submitOrder()">✅ অর্ডার কনফার্ম করুন</button>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>যেকোনো প্রয়োজনে কল করুন:</p>
+    <a href="tel:01891466471" class="contact-btn">
+      📞 01891466471
+    </a>
+    <p style="margin-top: 15px; font-size: 0.8rem;">© 2026 <span id="footerName">Gadget Zone</span></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.title = CONFIG.pageName;
+      document.getElementById('pageTitle').textContent = CONFIG.pageName;
+      document.getElementById('footerName').textContent = CONFIG.pageName;
+
+      document.getElementById('productImage').src = CONFIG.product.image;
+      document.getElementById('productTitle').textContent = CONFIG.product.title;
+      document.getElementById('productPrice').textContent = CONFIG.product.currency + ' ' + CONFIG.product.price;
+      document.getElementById('productDesc').textContent = CONFIG.product.description;
+
+      document.getElementById('priceInside').textContent = CONFIG.delivery.insideSylhet + '৳';
+      document.getElementById('priceOutside').textContent = CONFIG.delivery.outsideSylhet + '৳';
+
+      let count = localStorage.getItem('orderCount') || 0;
+      document.getElementById('countNumber').textContent = count;
+
+      updateTotal();
+
+      document.querySelectorAll('.delivery-option').forEach(opt => {
+        opt.addEventListener('click', function() {
+          document.querySelectorAll('.delivery-option').forEach(o => o.classList.remove('selected'));
+          this.classList.add('selected');
+        });
+      });
+    });
+
+    function showOrderForm() {
+      document.getElementById('orderForm').classList.add('active');
+      document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function updateTotal() {
+      const deliveryType = document.querySelector('input[name="delivery"]:checked').value;
+      const deliveryCharge = deliveryType === 'inside' 
+        ? CONFIG.delivery.insideSylhet 
+        : CONFIG.delivery.outsideSylhet;
+
+      const total = CONFIG.product.price + deliveryCharge;
+      document.getElementById('totalAmount').textContent = total + '৳';
+    }
+
+    function submitOrder() {
+      const name = document.getElementById('customerName').value.trim();
+      const mobile = document.getElementById('customerMobile').value.trim();
+      const address = document.getElementById('customerAddress').value.trim();
+      const deliveryType = document.querySelector('input[name="delivery"]:checked').value;
+
+      if (!name || !mobile || !address) {
+        alert('দয়া করে সব তথ্য পূরণ করুন!');
+        return;
+      }
+
+      if (!/^01[3-9]\d{8}$/.test(mobile)) {
+        alert('সঠিক মোবাইল নাম্বার দিন (01XXXXXXXXX)');
+        return;
+      }
+
+      const deliveryText = deliveryType === 'inside' ? 'সিলেটের ভিতরে' : 'সিলেটের বাইরে';
+      const deliveryCharge = deliveryType === 'inside' ? CONFIG.delivery.insideSylhet : CONFIG.delivery.outsideSylhet;
+      const total = CONFIG.product.price + deliveryCharge;
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'অর্ডার পাঠানো হচ্ছে...';
+
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('mobile', mobile);
+      formData.append('address', address);
+      formData.append('delivery', deliveryText);
+      formData.append('total', total + '৳');
+
+      fetch(CONFIG.scriptURL, { method: 'POST', body: formData })
+      .then(response => {
+        let count = parseInt(localStorage.getItem('orderCount') || 0) + 1;
+        localStorage.setItem('orderCount', count);
+        document.getElementById('countNumber').textContent = count;
+
+        document.getElementById('successMsg').style.display = 'block';
+        document.getElementById('orderForm').classList.remove('active');
+
+        document.getElementById('customerName').value = '';
+        document.getElementById('customerMobile').value = '';
+        document.getElementById('customerAddress').value = '';
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = '✅ অর্ডার কনফার্ম করুন';
+
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Purchase', { value: total, currency: 'BDT' });
+        }
+      })
+      .catch(error => {
+        alert('কোথাও কোনো সমস্যা হয়েছে, অনুগ্রহ করে আবার চেষ্টা করুন।');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '✅ অর্ডার কনফার্ম করুন';
+      });
+    }
+  </script>
+  <script>
+<script>
+fetch('/content/product.json')
+  .then(response => response.json())
+  .then(data => {
+    if (data.title) {
+      document.getElementById('productTitle').innerText = data.title;
+    }
+    if (data.price) {
+      document.getElementById('productPrice').innerText = '৳ ' + data.price;
+    }
+    if (data.description) {
+      document.getElementById('productDesc').innerText = data.description;
+    }
+    if (data.image) {
+      document.getElementById('productImage').src = data.image;
+    }
+  })
+  .catch(err => console.log('CMS data not loaded yet:', err));
+</script>
+
+</body>
+</html>
